@@ -1,5 +1,0 @@
-sitemaps:
-  partsasist:
-    origin: https://partsasist.com
-    source: /query-index.json
-    destination: /sitemap.xml
