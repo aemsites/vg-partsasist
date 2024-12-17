@@ -14,7 +14,7 @@
 @font-face {
   font-family: "Roboto fallback";
   size-adjust: 99.529%;
-  src: local("Arial");
+  src: local("Noto Sans");
 }
 
 :root {
@@ -29,12 +29,13 @@
   --cards-text-color-white: #fff;
 
   /* fonts */
-  --body-font-family: "Roboto", "Roboto fallback", noto, sans-serif;
+  --ff-fallback-default: "Noto Sans", sans-serif;
+  --body-font-family: "Roboto", "Roboto fallback", noto, var(--ff-fallback-default);
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
-  --cards-title-font-family: "Roboto", "Roboto fallback", noto, sans-serif;
-  --cards-text-font-family: 'Roboto Condensed', "Roboto", "Roboto fallback", sans-serif;
-  --hero-text-font-family: 'Roboto Condensed', "Roboto", "Roboto fallback", sans-serif;
+  --cards-title-font-family: "Roboto", "Roboto fallback", noto, var(--ff-fallback-default);
+  --cards-text-font-family: 'Roboto Condensed', "Roboto", "Roboto fallback", var(--ff-fallback-default);
+  --hero-text-font-family: 'Roboto Condensed', "Roboto", "Roboto fallback", var(--ff-fallback-default);
 
   /* body sizes */
   --body-font-size-xl: 28px;
