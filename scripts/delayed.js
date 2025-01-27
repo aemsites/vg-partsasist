@@ -35,6 +35,7 @@ window.OptanonWrapper = () => {};
 
 // Check for Campaign & Business Unit IDs in metadata & Pardot form block on the page
 // then add the IDs to the script that will be injected.
+// Pardot script used for standalone and landing pages
 const campaignMeta = document.querySelector('meta[name="campaign-id"]');
 const businessUnitMeta = document.querySelector('meta[name="business-unit-id"]');
 const pardotFormBlock = document.querySelector('.pardot-form.block');
@@ -70,3 +71,28 @@ if (campaignMeta && businessUnitMeta && pardotForm) {
   document.head.appendChild(pardotScript);
 }
 // Contact form campaign End
+
+// Pardot script used for all pages on the main website
+const pardotGlobalScript = document.createRange().createContextualFragment(`
+  <script type="text/javascript">
+    piAId = '1000771';
+    piCId = '46556';
+    piHostname = 'pi.pardot.com';
+    (function() {
+      function async_load() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+        var c = document.getElementsByTagName('script')[0];
+        c.parentNode.insertBefore(s, c);
+      }
+      if (window.attachEvent) {
+        window.attachEvent('onload', async_load);
+      } else {
+        window.addEventListener('load', async_load, false);
+      }
+    })();
+  </script>
+`);
+
+document.body.appendChild(pardotGlobalScript);
