@@ -6,7 +6,8 @@
   "scripts": {
     "lint:js": "eslint .",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
-    "lint": "npm run lint:js && npm run lint:css"
+    "lint": "npm run lint:js && npm run lint:css",
+    "dev": "AEM_PAGES_URL=https://main--vg-partsasist--volvogroup.aem.page/ aem up"
   },
   "repository": {
     "type": "git",
