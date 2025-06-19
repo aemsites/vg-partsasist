@@ -1,8 +1,8 @@
 :root {
-  --fields-font-size: var(--f-body-font-size);
+  --fields-font-size: var(--body-font-size-s);
   --fields-line-height: var(--f-body-line-height);
   --field-focus-color: var(--border-focus);
-  --field-border: 1px solid var(--c-grey-2);
+  --field-border: 1px solid var(--c-white);
   --field-error-color: var(--c-error-red);
   --form-border-color: var(--c-grey-2);
   --form-hover-border: 1px solid var(--field-focus-color);

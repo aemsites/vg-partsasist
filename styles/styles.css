@@ -11,6 +11,18 @@
  */
 
 :root {
+  /* generic colors */
+  --c-white: #fff;
+  --c-gray-1: #b6b7b9;
+  --c-gray-2: #212121;
+  --c-grey-0: #b9b9b9;
+  --c-grey-1: #686868;
+  --c-grey-2: #5b5b5b;
+  --c-grey-3: #414141;
+  --c-black: #000;
+  --c-red: #ff9c9d;
+  --c-green: #6aca4f;
+
   /* colors */
   --link-color: #babbbd;
   --link-hover-color: #babbbd;
@@ -320,3 +332,15 @@ main .section.highlight {
   margin-left: 5rem;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
