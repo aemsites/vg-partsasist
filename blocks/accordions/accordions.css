@@ -1,7 +1,3 @@
-.accordions {
-  color: white;
-}
-
 .accordions .accordion-wrapper {
   overflow: hidden;
   transition: height 0.35s ease;
@@ -14,7 +10,7 @@
 
 .accordions .accordion-button {
   background: none;
-  color: white;
+  color: var(--text-color);
   font-size: 0.8rem;
   font-weight: 400;
   padding: 8px 0;
@@ -43,7 +39,7 @@
 
 .accordions .accordion-button::after {
   content: "";
-  border: 1px solid #7e8082;
+  border: 1px solid var(--c-gray-2);
   border-top: none;
   border-left: none;
   border-right: none;

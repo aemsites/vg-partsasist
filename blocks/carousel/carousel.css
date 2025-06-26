@@ -35,7 +35,7 @@
 }
 
 .item .wrapper {
-  background-color: #39748C;
+  background-color: var(--c-steel-blue);
   text-align: left;
 }
 
@@ -134,7 +134,7 @@
   .item div div:last-child {
     position: absolute;
     width: 55%;
-    background-color: #39748C;
+    background-color: var(--c-steel-blue);
     max-height: 360px;
     overflow: hidden;
   }

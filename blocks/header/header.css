@@ -1,12 +1,8 @@
 :root {
-  --c-white-rgb: 255, 255, 255;
   --c-nav-active: 100%;
   --c-nav: 50%;
   --c-nav-hover: 75%;
   --c-alpha: var(--c-nav);
-  --c-login: #39748c;
-  --c-white: #fff;
-  --c-grey: #4b4e53;
 }
 
 html {
@@ -70,7 +66,7 @@ header nav .nav-hamburger {
   align-items: center;
   justify-content: flex-end;
   /* stylelint-disable-next-line color-function-notation */
-  color: rgba(var(--c-white-rgb), var(--c-alpha));
+  color: rgba(var(--c-white), var(--c-alpha));
 }
 
 header nav[aria-expanded="true"] .nav-hamburger {
@@ -95,7 +91,7 @@ header nav .nav-hamburger button {
 }
 
 header nav[aria-expanded="true"] .nav-hamburger button {
-  background-color: var(--c-grey);
+  background-color: var(--c-grey-5);
 }
 
 header nav .nav-hamburger-icon,
@@ -195,7 +191,7 @@ header nav[aria-expanded="true"] .nav-sections ul li {
   display: inline-flex;
   padding-inline-start: 1rem;
   /* stylelint-disable-next-line color-function-notation */
-  color: rgba(var(--c-white-rgb), var(--c-alpha));
+  color: rgba(var(--c-white), var(--c-alpha));
 }
 
 header nav[aria-expanded="true"] .nav-sections li:is(.active, :has([target])) {
@@ -204,7 +200,7 @@ header nav[aria-expanded="true"] .nav-sections li:is(.active, :has([target])) {
 
 header nav[aria-expanded="true"] .nav-sections ul li:has([target='_blank']) {
   order: -1;
-  background-color: var(--c-login);
+  background-color: var(--c-steel-blue);
 }
 
 header nav .nav-sections ul a {
@@ -318,7 +314,7 @@ header nav > div:not([class]):last-child {
 
   header nav .nav-sections ul a {
     /* stylelint-disable-next-line color-function-notation */
-    color: rgba(var(--c-white-rgb), var(--c-alpha));
+    color: rgba(var(--c-white), var(--c-alpha));
     font-weight: inherit;
   }
 
@@ -327,7 +323,7 @@ header nav > div:not([class]):last-child {
   }
 
   header nav .nav-sections ul .active a::after {
-    border-bottom: 2px solid #70be5e;
+    border-bottom: 2px solid var(--c-green);
     bottom: 0;
     content: '';
     left: 0;
@@ -344,8 +340,8 @@ header nav > div:not([class]):last-child {
   }
 
   header nav .nav-sections .button {
-    background-color: var(--c-login);
-    border-color: var(--c-login);
+    background-color: var(--c-steel-blue);
+    border-color: var(--c-steel-blue);
     color: var(--c-white);
     font-weight: 500;
     border-radius: unset;

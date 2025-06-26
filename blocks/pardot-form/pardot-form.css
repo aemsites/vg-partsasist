@@ -34,7 +34,7 @@
     font: inherit;
     outline: 0;
     border: 0;
-    border-bottom: 1px solid #babbbd;
+    border-bottom: 1px solid var(--c-gray-1);
     max-width: 100%;
     background-color: transparent;
 }
@@ -49,10 +49,10 @@
 }
 
 .pardot-form-container button[type='submit'] {
-    background-color: #39748c;
-    color: #fff;
+    background-color: var(--c-steel-blue);
+    color: var(--c-white);
     border-radius: 0;
-    border-color: #39748c;
+    border-color: var(--c-steel-blue);
     text-transform: uppercase;
     padding: 7px 25px;
     text-align: center;
@@ -63,7 +63,7 @@
 
 .pardot-form-container .field-wrapper[data-required] label::after {
     content: ' *';
-    color: #c00;
+    color: var(--c-error);
 }
 
 .pardot-form-container .field-wrapper span.error {
@@ -72,7 +72,7 @@
 
 .pardot-form-container .field-wrapper.invalid span.error {
     display: block;
-    color: #c00;
+    color: var(--c-error);
     font-size: 10px;
     font-weight: 700;
 }

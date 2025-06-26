@@ -12,7 +12,7 @@ footer .footer {
 }
 
 footer .footer > div {
-  border-top: 2px solid #babbbd;
+  border-top: 2px solid var(--c-gray-1);
   padding-top: 30px;
 }
 
@@ -46,7 +46,7 @@ footer .footer-nav {
 }
 
 .footer-lcol > ul > li > a {
-  color: #babbbd;
+  color: var(--c-gray-1);
   display: block;
   text-decoration: none;
 }

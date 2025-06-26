@@ -23,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     box-shadow: inset 0 0 0 10px var(--background-color);
-    outline: 1px solid #1b2634;
+    outline: 1px solid var(--outline-color-bg);
     width: 25%;
     padding: 1.9rem 0.4rem;
 }
@@ -35,7 +35,6 @@
 
 .cards.block img {
     width: auto;
-    aspect-ratio: 4 / 3;
     object-fit: cover;
     margin-bottom: 1rem;
 }
@@ -212,7 +211,7 @@
         width: 100%;
         justify-content: center;
         box-shadow: inset 0 0 0 10px var(--background-color);
-        outline: 1px solid #1b2634;
+        outline: 1px solid var(--outline-color-bg);
         padding: 1.5rem 0;
     }
 

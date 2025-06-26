@@ -13,28 +13,40 @@
 :root {
   /* generic colors */
   --c-white: #fff;
-  --c-gray-1: #b6b7b9;
-  --c-gray-2: #212121;
-  --c-grey-0: #b9b9b9;
-  --c-grey-1: #686868;
-  --c-grey-2: #5b5b5b;
-  --c-grey-3: #414141;
   --c-black: #000;
   --c-red: #ff9c9d;
   --c-green: #6aca4f;
+  --c-steel-blue-light: #6c757d;
+  --c-steel-blue: #39748c;
+  --c-steel-blue-dark: #2f6377;
+  --c-dark-blue: #1b2634;
+  --c-error: #c00;
 
-  /* colors */
-  --link-color: #babbbd;
-  --link-hover-color: #babbbd;
-  --background-color: #1b2634;
-  --header-background-color: #1c2735;
-  --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
-  --text-color: #fff;
-  --cards-text-color-white: #fff;
+  
+  /* gray shades */
+  --c-light-gray-0: #eee;
+  --c-light-gray-1: #ccc;
+  --c-gray-0: #b9b9b9;
+  --c-gray-1: #b6b7b9;
+  --c-gray-2: #7e8082;
+  --c-gray-3: #686868;
+  --c-gray-4: #5b5b5b;
+  --c-gray-5: #414141;
+  --c-gray-6: #212121;
+  
+  /* applied colors */
+  --link-color: var(--c-white);
+  --link-hover-color: var(--c-gray-0);
+  --background-color: var(--c-dark-blue);
+  --outline-color-bg: var(--background-color);
+  --header-background-color: var(--c-dark-blue);
+  --overlay-background-color: var(--c-light-gray-0);
+  --highlight-background-color: var(--c-light-gray-1);
+  --text-color: var(--c-white);
+  --cards-text-color-white: var(--c-white);
   --border-focus: var(--c-gray-1);
-  --bg-button-color: #39748c;
-  --bg-button-color-hover: #2f6377;
+  --bg-button-color: var(--c-steel-blue);
+  --bg-button-color-hover: var(--c-steel-blue-dark);
 
   /* fonts */
   --body-font-family: 'Roboto', noto, sans-serif;
@@ -67,9 +79,9 @@
   --field-error-color: var(--c-red);
   --field-border-color: var(--c-white);
   --field-circle-bg-color: var(--c-gray-2);
-  --field-checkbox-checked-bg-color: var(--c-grey-950);
-  --field-checkbox-checked-color: var(--c-grey-950);
-  --field-checkbox-checked-border-color: var(--c-grey-950);
+  --field-checkbox-checked-bg-color: var(--c-gray-6);
+  --field-checkbox-checked-color: var(--c-gray-6);
+  --field-checkbox-checked-border-color: var(--c-gray-6);
   --field-radio-checked-bg-color: var(--c-white);
   --field-radio-checked-color: var(--c-black);
   --field-font-size: var(--body-font-size-s);

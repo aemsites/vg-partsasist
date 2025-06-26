@@ -31,7 +31,7 @@
   background: none;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #70BE5E;
+  background-color: var(--c-green);
 }
 
 .carousel-control-prev {
