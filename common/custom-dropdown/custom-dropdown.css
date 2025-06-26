@@ -1,5 +1,6 @@
 :root {
-  --dropdown-check-icon: url('/icons/check-thin.svg');
+  --dropdown-check-icon: url("/icons/check-thin.svg");
+  --border-radius: var(--form-border-radius);
 }
 
 .native-select {
@@ -16,7 +17,7 @@
 .custom-dropdown {
   display: block;
   position: relative;
-  font-size: 14px;
+  font-size: var(--field-font-size);
 }
 
 .custom-dropdown::placeholder {
@@ -26,30 +27,28 @@
 
 .custom-dropdown::after {
   display: block;
-  content: url('../../icons/chevron-down.svg');
+  content: url("../../icons/chevron-down-thin.svg");
   position: absolute;
   top: 0;
-  right: 10px;
-  height: 32px;
-  width: 32px;
+  right: 4px;
   pointer-events: none;
   padding: 8px;
 }
 
 .custom-dropdown.open::after {
   transform: rotate(180deg);
-  top: 5px;
-  right: 5px;
-  padding: 6px;
+  top: -6px;
+  right: 4px;
+  padding: 8px;
 }
 
 .custom-dropdown__button {
   color: var(--text-color);
   background-color: var(--background-color);
   border: var(--field-border);
+  border-radius: var(--form-border-radius);
   width: 100%;
   max-width: 100%;
-  padding: 10px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -57,6 +56,7 @@
 
 .custom-dropdown__button.placeholder-state {
   color: var(--c-placeholder-text);
+  display: flex;
 }
 
 .custom-dropdown__option-list {
@@ -66,9 +66,10 @@
   position: absolute;
   top: calc(100% + 8px);
   width: 100%;
+  color: var(--text-color);
   background-color: var(--background-color);
-  box-shadow:
-    0 0.3px 2px 0 var(--color-bg-shadow, var(--color-bg-shadow)),
+  border: var(--field-border);
+  box-shadow: 0 0.3px 2px 0 var(--color-bg-shadow, var(--color-bg-shadow)),
     0 3px 8px 0 var(--color-bg-shadow, var(--color-bg-shadow));
   z-index: 1;
   padding: 4px 0;
@@ -79,7 +80,6 @@
   */
   max-height: 250px;
   overflow-y: scroll;
-
 }
 
 .open .custom-dropdown__option-list {
@@ -88,31 +88,28 @@
 }
 
 .custom-dropdown__option {
-  color: var(--c-black);
   line-height: 16px;
-  padding: 10px 16px;
+  padding: 6px 16px;
 }
 
 .custom-dropdown__button,
 .custom-dropdown__option {
-  font-weight: 500;
   letter-spacing: var(--form-letter-spacing);
   line-height: var(--form-line-height);
 }
 
 .custom-dropdown__option.option-current {
   pointer-events: none;
-  outline: 2px solid var(--border-focus);
   outline-offset: -2px;
 }
 
-.custom-dropdown__option[aria-selected='true'] {
-  background-color: var(--c-grey-100);
+.custom-dropdown__option[aria-selected="true"] {
+  background-color: var(--c-grey-2);
   padding-right: 30px;
   position: relative;
 }
 
-.custom-dropdown__option[aria-selected='true']::after {
+.custom-dropdown__option[aria-selected="true"]::after {
   content: var(--dropdown-check-icon);
   height: 24px;
   width: 24px;
@@ -122,7 +119,7 @@
 }
 
 .custom-dropdown__option:hover {
-  background-color: var(--c-grey-50);
+  background-color: var(--c-grey-2);
   cursor: pointer;
 }
 
@@ -143,7 +140,7 @@
   }
 
   .custom-dropdown__option-list {
-    top: 100%;
+    top: calc(100% + 2px);
   }
 }
 

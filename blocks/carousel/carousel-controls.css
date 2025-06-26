@@ -58,21 +58,21 @@
   padding-right: 6px;
 }
 
-@media (width >= 576px) {
+@media (min-width: 576px) {
   .carousel-control-prev,
   .carousel-control-next {
     top: 45%;
   }
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .carousel-control-prev,
   .carousel-control-next {
     top: 51%;
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   .carousel-controls li {
     height: 50px;
     width: 50px;
@@ -97,7 +97,7 @@
 
 }
 
-@media (width >= 1200px) {
+@media (min-width: 1200px) {
   .carousel-control-prev {
     right: -2%;
     top: 48%;

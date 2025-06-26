@@ -193,13 +193,13 @@
 }
 
 /* Media queries */
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .cards.block > ul {
         width: 90%;
     }
 }
 
-@media (width <= 991px) {
+@media (max-width: 991px) {
     .cards.block > ul {
         flex-direction: column;
         align-items: center;
@@ -242,7 +242,7 @@
     }
 }
 
-@media (width <= 767px) {
+@media (max-width: 767px) {
     .cards.block > ul {
         width: 540px;
     }
@@ -261,7 +261,7 @@
     }
 }
 
-@media (width <= 575px) {
+@media (max-width: 575px) {
     .cards.block > ul {
         width: 100%;
     }

@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   div .scroll-button {
     display: flex;
     justify-content: center;

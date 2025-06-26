@@ -71,7 +71,7 @@
 
 /* Media queries */
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .accordions .accordion-button {
     margin: 0;
   }
@@ -93,7 +93,7 @@
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   .faq-accordions.accordions-container {
     background-image: url("/media/parallax3.png"), url("/media/parallax4.png");
     background-repeat: no-repeat;

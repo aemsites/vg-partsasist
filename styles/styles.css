@@ -32,14 +32,17 @@
   --highlight-background-color: #ccc;
   --text-color: #fff;
   --cards-text-color-white: #fff;
+  --border-focus: var(--c-gray-1);
+  --bg-button-color: #39748c;
+  --bg-button-color-hover: #2f6377;
 
   /* fonts */
-  --body-font-family: "Roboto", noto, sans-serif;
+  --body-font-family: 'Roboto', noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
-  --cards-title-font-family: "Roboto", noto, sans-serif;
-  --cards-text-font-family: 'Roboto Condensed', "Roboto", sans-serif;
-  --hero-text-font-family: 'Roboto Condensed', "Roboto", sans-serif;
+  --cards-title-font-family: 'Roboto', noto, sans-serif;
+  --cards-text-font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  --hero-text-font-family: 'Roboto Condensed', 'Roboto', sans-serif;
 
   /* body sizes */
   --body-font-size-xl: 28px;
@@ -59,19 +62,40 @@
   /* nav height */
   --nav-height: 70px;
 
+  /* form elements */
+  --field-focus-color: var(--c-green);
+  --field-error-color: var(--c-red);
+  --field-border-color: var(--c-white);
+  --field-circle-bg-color: var(--c-gray-2);
+  --field-checkbox-checked-bg-color: var(--c-grey-950);
+  --field-checkbox-checked-color: var(--c-grey-950);
+  --field-checkbox-checked-border-color: var(--c-grey-950);
+  --field-radio-checked-bg-color: var(--c-white);
+  --field-radio-checked-color: var(--c-black);
+  --field-font-size: var(--body-font-size-s);
+  --label-font-size: var(--field-font-size);
+  --error-font-size: var(--body-font-size-xs);
+  --f-body-line-height: normal;
+  --field-line-height: var(--f-body-line-height);
+  --field-border: 1px solid var(--c-white);
+  --form-letter-spacing: var(--f-body-letter-spacing);
+  --form-line-height: var(--f-body-line-height);
+  --form-border-radius: 6px;
+  --form-hover-border: 2px solid var(--field-border-color);
+  --form-focus-border: 2px solid var(--field-focus-color);
 }
 
 html {
   font-size: 16px;
 }
 
-@media (width >= 320px) {
+@media (min-width: 320px) {
   html {
-    font-size: calc(16px + 6*((100vw - 320px)/680));
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   html {
     font-size: 22px;
   }
@@ -92,24 +116,50 @@ body.appear {
   display: block;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 500;
   line-height: 1.25;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -124,21 +174,24 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
-  padding: .125em;
+code,
+samp {
+  padding: 0.125em;
 }
 
 pre {
   overflow: scroll;
 }
 
-
-a.button:hover, a.button:focus {
+a.button:hover,
+a.button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
@@ -165,39 +218,67 @@ a.button:hover, a.button:focus {
   border-radius: 30px;
 }
 
- button:hover, button:focus  {
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-
-
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+a.button.primary,
+button.primary {
+  background-color: var(--bg-button-color);
+  color: var(--c-white);
+  font-weight: normal;
+  border-radius: 0;
+  font-size: var(--body-font-size-s);
 }
 
+a.button.primary:hover,
+button.primary:hover {
+  background-color: var(--bg-button-color-hover);
+}
 
-main input, main select, main textarea {
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color);
+}
+
+main input,
+main select,
+main textarea,
+main .custom-dropdown__button {
   width: 100%;
-  display: block;
-  margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;
-  border-radius: 0.25rem;
+  display: flex;
+  padding: 10px;
+  border-radius: var(--form-border-radius);
   box-sizing: border-box;
-  border: 1px solid var(--text-color);
+  border: var(--field-border);
   color: var(--text-color);
   background-color: var(--background-color);
 }
 
-main input:hover {
-  border: 1px solid var(--text-color);
+main input:hover,
+main select:hover,
+main textarea:hover,
+main .custom-dropdown__button:hover {
+  outline: var(--form-hover-border);
+  outline-offset: -2px;
+}
+
+main input:focus-visible,
+main select:focus-visible,
+main textarea:focus-visible,
+main .custom-dropdown__button:focus-visible {
+  outline: var(--form-focus-border);
+  outline-offset: -2px;
 }
 
 main .section {
@@ -207,7 +288,7 @@ main .section {
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
-  border-radius: .25em;
+  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
@@ -220,12 +301,12 @@ main blockquote {
 }
 
 main blockquote p::before {
-  content: "“";
+  content: '“';
   line-height: 0;
 }
 
 main blockquote p::after {
-  content: "”";
+  content: '”';
   line-height: 0;
 }
 
@@ -242,13 +323,13 @@ main img {
   height: auto;
 }
 
-@media (width >= 600px) {
+@media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
   }
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -278,14 +359,14 @@ main .section.highlight {
   --heading-font-size-xxl: 55px;
 }
 
-.disclosure p, .disclosure li {
+.disclosure p,
+.disclosure li {
   font-size: var(--body-font-size-s);
 }
 
 .disclosure #ot-sdk-cookie-policy .ot-sdk-container {
   max-width: 1200px;
 }
-
 
 /* The injected widget should be customized in the SDK UI by an administrator.
  * see https://my.onetrust.com/articles/en_US/Knowledge/UUID-8a1fff4c-95c6-be5f-4369-228aa86283c6
@@ -301,8 +382,8 @@ main .section.highlight {
 
 .disclosure #ot-sdk-cookie-policy {
   /* reduce padding introduced by new section */
-   margin-top: -32px;
-   margin-bottom: -32px;
+  margin-top: -32px;
+  margin-bottom: -32px;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -328,7 +409,7 @@ main .section.highlight {
 }
 
 .disclosure .full-policy > .default-content-wrapper > p,
-.disclosure .full-policy > .default-content-wrapper > ul{
+.disclosure .full-policy > .default-content-wrapper > ul {
   margin-left: 5rem;
 }
 

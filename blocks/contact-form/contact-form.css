@@ -90,7 +90,7 @@
     color: #c00;
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
     .row {
         flex-direction: initial;
         gap: 4rem;

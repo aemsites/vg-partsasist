@@ -1,23 +1,3 @@
-:root {
-  --fields-font-size: var(--body-font-size-s);
-  --fields-line-height: var(--f-body-line-height);
-  --field-focus-color: var(--border-focus);
-  --field-border: 1px solid var(--c-white);
-  --field-error-color: var(--c-error-red);
-  --form-border-color: var(--c-grey-2);
-  --form-hover-border: 1px solid var(--field-focus-color);
-  --form-focus-border: 2px solid var(--field-focus-color);
-  --form-letter-spacing: var(--f-body-letter-spacing);
-  --form-line-height: var(--f-body-line-height);
-  --field-circle-bg-color: #2121210d;
-  --field-border-color: var(--c-grey-400);
-  --field-checkbox-checked-bg-color: var(--c-grey-950);
-  --field-checkbox-checked-color: var(--c-grey-950);
-  --field-checkbox-checked-border-color: var(--c-grey-950);
-  --field-radio-checked-bg-color: var(--c-black);
-  --field-radio-checked-color: var(--c-black);
-}
-
 .section-with-background.v2-custom-form-container {
   --text-color: var(--c-black);
 
@@ -36,7 +16,7 @@
 .v2-custom-form-container form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
   width: min(100%, 600px);
   margin: 0 auto;
 }
@@ -50,7 +30,7 @@
   max-width: 100%;
   padding: 10px;
   height: 40px;
-  font-size: var(--fields-font-size);
+  font-size: var(--field-font-size);
 }
 
 .v2-custom-form-container input,
@@ -63,7 +43,7 @@
 }
 
 .v2-custom-form-container :is(input, select, textarea, .custom-dropdown__button, .form-radio-buttons) {
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
 }
 
 .v2-custom-form-container .form-checkbox-wrapper {
@@ -76,10 +56,9 @@
 .v2-custom-form-container .v2-custom-form .error,
 .v2-custom-form-container .v2-custom-form label,
 .v2-custom-form-container textarea::placeholder,
-.v2-custom-form-container input::placeholder,
-.v2-custom-form-container .form-radio-buttons {
+.v2-custom-form-container input::placeholder {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .v2-custom-form-container .form-checkbox-wrapper input[type='checkbox'] {
@@ -95,7 +74,7 @@
   margin-bottom: 0;
   z-index: 0;
   color: var(--field-checkbox-checked-color);
-  font-size: var(--fields-font-size);
+  font-size: var(--field-font-size);
   font-family: var(--font-family-body);
 }
 
@@ -105,8 +84,7 @@
 
 .v2-custom-form-container .form-checkbox-wrapper input[type='checkbox'] + label::before {
   content: '';
-  background: var(--c-white);
-  border: 2px solid var(--field-border-color);
+  border: 1px solid var(--c-gray-1);
   border-radius: 2px;
   display: inline-block;
   vertical-align: middle;
@@ -143,14 +121,9 @@
 
 @media (hover: hover) {
   .form-checkbox-wrapper input[type='checkbox'] + label:hover::before {
-    background-color: var(--field-circle-bg-color);
-    border-color: var(--field-border-color);
+    outline: 2px solid var(--c-gray-1);
+    outline-offset: -2px;
   }
-}
-
-.form-checkbox-wrapper input[type='checkbox']:checked + label::before {
-  background-color: var(--field-checkbox-checked-bg-color);
-  border-color: var(--field-checkbox-checked-border-color);
 }
 
 .v2-custom-form-container .field-wrapper[required] label::after {
@@ -183,7 +156,7 @@
 .v2-custom-form-container .field-wrapper input:hover,
 .v2-custom-form-container .field-wrapper select:hover {
   outline: var(--form-hover-border);
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 .v2-custom-form-container .form-checkbox-wrapper input[type='checkbox'] + label:focus-visible::before {
@@ -191,17 +164,25 @@
   outline-offset: 2px;
 }
 
-.v2-custom-form-container .form-custom-dropdown-wrapper {
+.form-radio-legend {
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.v2-custom-form-container .form-radio-legend,
+.v2-custom-form-container .field-label {
   position: relative;
-  font-size: var(--fields-font-size);
+  font-size: var(--label-font-size);
 }
 
 .v2-custom-form-container .field-wrapper {
-  line-height: var(--fields-line-height);
+  line-height: var(--field-line-height);
 }
 
 .v2-custom-form-container .v2-custom-form .error {
   color: var(--field-error-color);
+  font-size: var(--error-font-size);
+  margin-bottom: 0;
 }
 
 .form-radio-wrapper {
@@ -219,21 +200,17 @@
   display: none;
 }
 
-.form-radio-legend {
-  margin-bottom: 16px;
-  padding: 0;
-}
-
 .form-radio-option {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   width: fit-content;
+  margin-bottom: 16px;
 }
 
-.form-radio-option:not(:last-child) {
-  margin-bottom: 16px;
+.form-radio-option:last-of-type {
+  margin-bottom: 5px;
 }
 
 .form-radio-label::before {
@@ -244,21 +221,13 @@
   transform: translateY(-50%);
   height: 20px;
   width: 20px;
-  border: 2px solid var(--form-border-color);
+  border: 1px solid var(--c-gray-1);
   border-radius: 50%;
-  background-color: var(--c-white);
   z-index: 1;
 }
 
-@media (hover: hover) {
-  .form-radio-option:hover .form-radio-label::before {
-    border-color: var(--field-border-color);
-    background-color: var(--field-circle-bg-color);
-  }
-}
-
 .v2-custom-form .form-radio-input:focus-visible + .form-radio-label::after {
-  content: "";
+  content: '';
   position: absolute;
   left: -5px;
   top: 50%;
@@ -273,16 +242,12 @@
 
 .form-radio-input:checked + .form-radio-label::before {
   background-color: var(--field-radio-checked-bg-color);
-  border-color: var(--field-radio-checked-color);
-  box-shadow: inset 0 0 0 3px var(--c-white);
+  outline: 4px solid var(--field-radio-checked-color);
+  outline-offset: -5px;
 }
 
 .form-radio-wrapper.invalid .form-radio-label::before {
   border-color: var(--field-error-color);
-}
-
-.form-radio-option:hover .form-radio-input:checked + .form-radio-label::before {
-  border-color: var(--field-radio-checked-color);
 }
 
 .form-radio-circle {
@@ -320,7 +285,7 @@
   cursor: pointer;
   display: inline-block;
   padding-bottom: 0;
-  font-size: var(--fields-font-size);
+  font-size: var(--field-font-size);
   font-family: var(--font-family-body);
   color: var(--text-color);
   z-index: 1;
@@ -334,6 +299,7 @@
   .v2-custom-form-container form {
     display: flex;
     flex-flow: row wrap;
+    gap: 25px;
   }
 
   .v2-custom-form-container .field-wrapper {

@@ -219,7 +219,7 @@ header nav > div:not([class]):last-child {
   display: none;
 }
 
-@media (width >= 600px) {
+@media (min-width: 600px) {
   /* header and nav layout */
   header nav {
     padding: 0 2rem;
@@ -231,7 +231,7 @@ header nav > div:not([class]):last-child {
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   /* header and nav layout */
   header nav {
     display: flex;
@@ -353,7 +353,7 @@ header nav > div:not([class]):last-child {
   }
 }
 
-@media (width >= 1200px) {
+@media (min-width: 1200px) {
   header nav {
     max-width: 1140px;
     padding: 0;
