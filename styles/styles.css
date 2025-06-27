@@ -55,21 +55,22 @@
   --cards-text-font-family: 'Roboto Condensed', 'Roboto', sans-serif;
   --hero-text-font-family: 'Roboto Condensed', 'Roboto', sans-serif;
 
-  /* body sizes */
+  /* body font sizes */
   --body-font-size-xl: 28px;
   --body-font-size-l: 26px;
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
-  --f-body-line-height: normal;
 
-  /* heading sizes */
+  /* heading font sizes */
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
+
+  --f-body-line-height: normal;
 
   /* nav height */
   --nav-height: 70px;
@@ -86,6 +87,7 @@
   --field-checkbox-checked-border-color: var(--c-gray-6);
   --field-radio-checked-bg-color: var(--c-white);
   --field-radio-checked-color: var(--c-black);
+  --field-box-border: 1px solid var(--c-gray-1);
   --field-font-size: var(--body-font-size-s);
   --label-font-size: var(--field-font-size);
   --error-font-size: var(--body-font-size-xs);
@@ -93,9 +95,11 @@
   --field-border: 1px solid var(--field-border-color);
   --form-letter-spacing: var(--f-body-letter-spacing);
   --form-line-height: var(--f-body-line-height);
+  --form-font-weight: 300;
   --form-border-radius: 6px;
   --form-hover-border: 2px solid var(--field-border-color);
   --form-focus-border: 2px solid var(--field-focus-color);
+  --field-hover-outline: 2px solid var(--c-gray-1);
 }
 
 html {
@@ -451,7 +455,7 @@ main .section-with-background {
   color: var(--text-color);
   margin-top: 48px;
   margin-bottom: 48px;
-  padding: 48px 0;
+  padding: 48px 32px;
 }
 
 div:where([role='dialog']) .section-with-background > div:first-of-type,
