@@ -22,8 +22,7 @@
   --c-dark-blue: #1b2634;
   --c-error: #c00;
 
-  
-  /* gray shades */
+    /* gray shades */
   --c-light-gray-0: #eee;
   --c-light-gray-1: #ccc;
   --c-gray-0: #b9b9b9;
@@ -35,6 +34,7 @@
   --c-gray-6: #212121;
   
   /* applied colors */
+  --text-color: var(--c-white);
   --link-color: var(--c-white);
   --link-hover-color: var(--c-gray-0);
   --background-color: var(--c-dark-blue);
@@ -42,7 +42,6 @@
   --header-background-color: var(--c-dark-blue);
   --overlay-background-color: var(--c-light-gray-0);
   --highlight-background-color: var(--c-light-gray-1);
-  --text-color: var(--c-white);
   --cards-text-color-white: var(--c-white);
   --border-focus: var(--c-gray-1);
   --bg-button-color: var(--c-steel-blue);
@@ -62,6 +61,7 @@
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
+  --f-body-line-height: normal;
 
   /* heading sizes */
   --heading-font-size-xxl: 48px;
@@ -74,22 +74,23 @@
   /* nav height */
   --nav-height: 70px;
 
+  /* section style */
+  --wrapper-width: 100%;
+
   /* form elements */
   --field-focus-color: var(--c-green);
   --field-error-color: var(--c-red);
   --field-border-color: var(--c-white);
   --field-circle-bg-color: var(--c-gray-2);
   --field-checkbox-checked-bg-color: var(--c-gray-6);
-  --field-checkbox-checked-color: var(--c-gray-6);
   --field-checkbox-checked-border-color: var(--c-gray-6);
   --field-radio-checked-bg-color: var(--c-white);
   --field-radio-checked-color: var(--c-black);
   --field-font-size: var(--body-font-size-s);
   --label-font-size: var(--field-font-size);
   --error-font-size: var(--body-font-size-xs);
-  --f-body-line-height: normal;
   --field-line-height: var(--f-body-line-height);
-  --field-border: 1px solid var(--c-white);
+  --field-border: 1px solid var(--field-border-color);
   --form-letter-spacing: var(--f-body-letter-spacing);
   --form-line-height: var(--f-body-line-height);
   --form-border-radius: 6px;
@@ -436,4 +437,46 @@ main .section.highlight {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+
+div:where([role='dialog']) .section-with-background,
+main .section-with-background {
+  --text-color: var(--c-white);
+  --background-color: var(--c-white);
+
+  box-sizing: border-box;
+  position: relative;
+  min-height: 405px;
+  color: var(--text-color);
+  margin-top: 48px;
+  margin-bottom: 48px;
+  padding: 48px 0;
+}
+
+div:where([role='dialog']) .section-with-background > div:first-of-type,
+main .section-with-background > div:first-of-type,
+div:where([role='dialog']) .section-with-background > div:first-of-type > :first-child,
+main .section-with-background > div:first-of-type > :first-child {
+  margin-top: 0;
+}
+
+div:where([role='dialog']) .section-with-background > div:last-of-type,
+main .section-with-background > div:last-of-type,
+div:where([role='dialog']) .section-with-background > div:last-of-type > :last-child,
+main .section-with-background > div:last-of-type > :last-child {
+  margin-bottom: 0;
+}
+
+div:where([role='dialog']) .section-with-background > picture:last-of-type img,
+main .section-with-background > picture:last-of-type img {
+  width: var(--wrapper-width);
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  object-fit: cover;
 }

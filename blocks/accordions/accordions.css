@@ -11,7 +11,7 @@
 .accordions .accordion-button {
   background: none;
   color: var(--text-color);
-  font-size: 0.8rem;
+  font-size: var(--body-font-size-s);
   font-weight: 400;
   padding: 8px 0;
   margin: 0 25px;

@@ -1,5 +1,5 @@
 :root {
-  --dropdown-check-icon: url("/icons/check-thin.svg");
+  --dropdown-check-icon: url("/icons/check-thin-white.svg");
   --border-radius: var(--form-border-radius);
 }
 
@@ -27,7 +27,7 @@
 
 .custom-dropdown::after {
   display: block;
-  content: url("../../icons/chevron-down-thin.svg");
+  content: url("../../icons/chevron-down-thin-white.svg");
   position: absolute;
   top: 0;
   right: 4px;
@@ -115,7 +115,7 @@
   width: 24px;
   position: absolute;
   right: 15px;
-  top: 25%;
+  top: 15%;
 }
 
 .custom-dropdown__option:hover {
@@ -147,4 +147,13 @@
 .section-with-background .custom-dropdown__button,
 .section-with-background .custom-dropdown__option {
   color: var(--c-black);
+}
+
+.section-with-background.v2-custom-form-container .custom-dropdown__option:hover,
+.section-with-background.v2-custom-form-container .custom-dropdown__option[aria-selected="true"] {
+  background-color: var(--c-gray-0);
+}
+
+.section-with-background.v2-custom-form-container .custom-dropdown::after {
+  content: url("../../icons/chevron-down-thin-black.svg");
 }
