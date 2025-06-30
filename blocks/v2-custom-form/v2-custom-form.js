@@ -117,14 +117,6 @@ function constructPayload(form) {
   const payload = { __id__: generateUnique() };
   [...form.elements].forEach((fe) => {
     if (fe.name && !fe.classList.contains(CLASSES.IGNORE_ON_FORM_SUBMIT)) {
-      if (fe.type === 'radio') {
-        console.log('Radio field:', {
-          name: fe.name,
-          checked: fe.checked,
-          value: fe.value,
-          payload: { ...payload },
-        });
-      }
       if (fe.type === 'radio' && fe.checked) {
         payload[fe.name] = fe.value;
       } else if (fe.type === 'checkbox' && fe.checked) {

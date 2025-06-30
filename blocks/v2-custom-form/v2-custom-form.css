@@ -238,7 +238,7 @@
 .v2-custom-form .form-radio-input:focus-visible + .form-radio-label::after {
   content: '';
   position: absolute;
-  left: -5px;
+  left: -7px;
   top: 50%;
   transform: translateY(-50%);
   width: 30px;
