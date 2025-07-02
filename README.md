@@ -2,8 +2,8 @@
 Helix site for https://partsasist.com/
 
 ## Environments
-- Preview: https://main--vg-partsasist--aemsites.aem.page/
-- Live: https://main--vg-partsasist--aemsites.aem.live/
+- Preview: https://main--vg-partsasist--volvogroup.aem.page/
+- Live: https://main--vg-partsasist--volvogroup.aem.live/
 
 ## Installation
 
