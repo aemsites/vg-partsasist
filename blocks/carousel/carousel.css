@@ -35,7 +35,7 @@
 }
 
 .item .wrapper {
-  background-color: #39748C;
+  background-color: var(--c-steel-blue);
   text-align: left;
 }
 
@@ -69,7 +69,7 @@
   font-weight: 500;
 }
 
-@media (width >= 576px) {
+@media (min-width: 576px) {
   .carousel-wrapper {
     width: 540px;
     margin: 300px auto 0;
@@ -85,7 +85,7 @@
   }
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .carousel-wrapper {
     width: 720px;
     margin-top: 300px;
@@ -97,13 +97,13 @@
   }
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   .carousel-wrapper {
     margin-top: 300px !important;
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   .carousel-wrapper {
     width: 930px;
     margin-top: 80px !important;
@@ -134,7 +134,7 @@
   .item div div:last-child {
     position: absolute;
     width: 55%;
-    background-color: #39748C;
+    background-color: var(--c-steel-blue);
     max-height: 360px;
     overflow: hidden;
   }
@@ -156,7 +156,7 @@
   }
 }
 
-@media (width >= 1200px) {
+@media (min-width: 1200px) {
   .carousel-wrapper {
     width: 1110px;
   }

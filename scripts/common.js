@@ -68,6 +68,22 @@ export const unwrapDivs = (element) => {
   });
 };
 
+/*
+* Convert a list of classes to BEM notation for variants.
+* @param {DOMTokenList} blockClasses the classes of the block
+* @param {string[]} expectedVariantsNames the expected variant names
+* @param {string} blockName the name of the block
+* @returns {void}
+*/
+export const variantsClassesToBEM = (blockClasses, expectedVariantsNames, blockName) => {
+  expectedVariantsNames.forEach((variant) => {
+    if (blockClasses.contains(variant)) {
+      blockClasses.remove(variant);
+      blockClasses.add(`${blockName}--${variant}`);
+    }
+  });
+};
+
 /**
    * Check if one trust group is checked.
    * @param {String} groupName the one trust croup like: C0002

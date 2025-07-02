@@ -25,14 +25,14 @@
     font: inherit;
     outline: 0;
     border: 0;
-    border-bottom: 1px solid #babbbd;
+    border-bottom: 1px solid var(--c-gray-1);
     max-width: 100%;
 }
 
 .form-element select {
     font: inherit;
     border: 0;
-    border-bottom: 1px solid #babbbd;
+    border-bottom: 1px solid var(--c-gray-1);
     width: 100%;
     color: inherit;
     background-color: transparent;
@@ -42,7 +42,7 @@
     font: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 1px solid #babbbd;
+    border-bottom: 1px solid var(--c-gray-1);
     color: inherit;
     background-color: transparent;
     max-height: 360px;
@@ -55,10 +55,10 @@
 }
 
 .form-element button[type='submit'] {
-    background-color: #39748c;
-    color: #fff;
+    background-color: var(--c-steel-blue);
+    color: var(--c-white);
     border-radius: 0;
-    border-color: #39748c;
+    border-color: var(--c-steel-blue);
     text-transform: uppercase;
     padding: 7px 25px;
     text-align: center;
@@ -68,7 +68,7 @@
 }
 
 .form-element .required-field {
-    color: #c00;
+    color: var(--c-error);
     font-size: 10px;
     font-weight: 700;
 }
@@ -87,10 +87,10 @@
 
 .form-element .required::after {
     content: ' *';
-    color: #c00;
+    color: var(--c-error);
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
     .row {
         flex-direction: initial;
         gap: 4rem;

@@ -1,0 +1,44 @@
+{
+    "total": 8,
+    "offset": 0,
+    "limit": 8,
+    "data": [
+        {
+            "Key": "Successful submission title",
+            "Text": "THANK YOU!"
+        },
+        {
+            "Key": "Successful submission text",
+            "Text": "Your information has been submitted. Someone will be in touch with you shortly."
+        },
+        {
+            "Key": "Error submission title",
+            "Text": "Error"
+        },
+        {
+            "Key": "Error submission text",
+            "Text": "Information not sent. Please, try again later."
+        },
+        {
+            "Key": "V2CustomForm:SuccessfulSubmissionTitle",
+            "Text": "THANK YOU!"
+        },
+        {
+            "Key": "V2CustomForm:SuccessfulSubmissionText",
+            "Text": "Your information has been submitted. Someone will be in touch with you shortly."
+        },
+        {
+            "Key": "V2CustomForm:ErrorSubmissionTitle",
+            "Text": "Error"
+        },
+        {
+            "Key": "V2CustomForm:ErrorSubmissionText",
+            "Text": "Information not sent. Please, try again later."
+        }
+    ],
+    "columns": [
+        "Key",
+        "Text"
+    ],
+    ":type": "sheet"
+}
