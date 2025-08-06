@@ -27,7 +27,7 @@
   margin: 0 -16px;
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .section-divider .section-divider-header {
     margin-bottom: 10px;
   }
@@ -39,7 +39,7 @@
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   .section-divider {
     width: calc(50% - 30px);
     padding: 97px 30px  36px 0;

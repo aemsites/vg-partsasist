@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
     .columns > div {
         display: flex;
         align-items: center;

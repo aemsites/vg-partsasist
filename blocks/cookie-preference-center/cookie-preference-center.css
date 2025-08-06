@@ -1,3 +1,3 @@
 .cookie-preference-center button {
-    background: #6c757d; border-color: #6c757d; color: #fff; padding: 10px;
+    background: var(--c-steel-blue-light); border-color: var(--c-steel-blue-light); color: var(--c-white); padding: 10px;
 }

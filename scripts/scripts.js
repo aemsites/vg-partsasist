@@ -10,10 +10,12 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  createOptimizedPicture,
 } from './aem.js';
 
 import {
   getPlaceholders,
+  variantsClassesToBEM,
 } from './common.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -84,6 +86,23 @@ function buildAutoBlocks(main) {
   }
 }
 
+function decorateSectionBackgrounds(main) {
+  const variantClasses = ['black-background', 'gray-background'];
+
+  main.querySelectorAll(':scope > .section').forEach((section) => {
+    // transform background color variants into BEM classnames
+    variantsClassesToBEM(section.classList, variantClasses, 'section');
+
+    // If the section contains a background image
+    const src = section.dataset.background;
+    if (src) {
+      const picture = createOptimizedPicture(src, '', false);
+      section.appendChild(picture);
+      section.classList.add('section-with-background');
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -96,6 +115,8 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+
+  decorateSectionBackgrounds(main);
 }
 
 /**

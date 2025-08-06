@@ -11,32 +11,58 @@
  */
 
 :root {
-  /* colors */
-  --link-color: #babbbd;
-  --link-hover-color: #babbbd;
-  --background-color: #1b2634;
-  --header-background-color: #1c2735;
-  --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
-  --text-color: #fff;
-  --cards-text-color-white: #fff;
+  /* generic colors */
+  --c-white: #fff;
+  --c-black: #000;
+  --c-red: #ff9c9d;
+  --c-green: #6aca4f;
+  --c-steel-blue-light: #6c757d;
+  --c-steel-blue: #39748c;
+  --c-steel-blue-dark: #2f6377;
+  --c-dark-blue: #1b2634;
+  --c-error: #c00;
+
+    /* gray shades */
+  --c-light-gray-0: #eee;
+  --c-light-gray-1: #ccc;
+  --c-gray-0: #b9b9b9;
+  --c-gray-1: #b6b7b9;
+  --c-gray-2: #7e8082;
+  --c-gray-3: #686868;
+  --c-gray-4: #5b5b5b;
+  --c-gray-5: #414141;
+  --c-gray-6: #212121;
+  
+  /* applied colors */
+  --text-color: var(--c-white);
+  --link-color: var(--c-white);
+  --link-hover-color: var(--c-gray-0);
+  --background-color: var(--c-dark-blue);
+  --outline-color-bg: var(--background-color);
+  --header-background-color: var(--c-dark-blue);
+  --overlay-background-color: var(--c-light-gray-0);
+  --highlight-background-color: var(--c-light-gray-1);
+  --cards-text-color-white: var(--c-white);
+  --border-focus: var(--c-gray-1);
+  --bg-button-color: var(--c-steel-blue);
+  --bg-button-color-hover: var(--c-steel-blue-dark);
 
   /* fonts */
-  --body-font-family: "Roboto", noto, sans-serif;
+  --body-font-family: 'Roboto', noto, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
-  --cards-title-font-family: "Roboto", noto, sans-serif;
-  --cards-text-font-family: 'Roboto Condensed', "Roboto", sans-serif;
-  --hero-text-font-family: 'Roboto Condensed', "Roboto", sans-serif;
+  --cards-title-font-family: 'Roboto', noto, sans-serif;
+  --cards-text-font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  --hero-text-font-family: 'Roboto Condensed', 'Roboto', sans-serif;
 
-  /* body sizes */
+  /* body font sizes */
   --body-font-size-xl: 28px;
   --body-font-size-l: 26px;
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
-  /* heading sizes */
+  /* heading font sizes */
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
   --heading-font-size-l: 32px;
@@ -44,22 +70,49 @@
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
+  --f-body-line-height: normal;
+
   /* nav height */
   --nav-height: 70px;
 
+  /* section style */
+  --wrapper-width: 100%;
+
+  /* form elements */
+  --field-focus-color: var(--c-green);
+  --field-error-color: var(--c-red);
+  --field-border-color: var(--c-white);
+  --field-circle-bg-color: var(--c-gray-2);
+  --field-checkbox-checked-bg-color: var(--c-gray-6);
+  --field-checkbox-checked-border-color: var(--c-gray-6);
+  --field-radio-checked-bg-color: var(--c-white);
+  --field-radio-checked-color: var(--c-black);
+  --field-box-border: 1px solid var(--c-gray-1);
+  --field-font-size: var(--body-font-size-s);
+  --label-font-size: var(--field-font-size);
+  --error-font-size: var(--body-font-size-xs);
+  --field-line-height: var(--f-body-line-height);
+  --field-border: 1px solid var(--field-border-color);
+  --form-letter-spacing: var(--f-body-letter-spacing);
+  --form-line-height: var(--f-body-line-height);
+  --form-font-weight: 300;
+  --form-border-radius: 6px;
+  --form-hover-border: 2px solid var(--field-border-color);
+  --form-focus-border: 2px solid var(--field-focus-color);
+  --field-hover-outline: 2px solid var(--c-gray-1);
 }
 
 html {
   font-size: 16px;
 }
 
-@media (width >= 320px) {
+@media (min-width: 320px) {
   html {
-    font-size: calc(16px + 6*((100vw - 320px)/680));
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   }
 }
 
-@media (width >= 992px) {
+@media (min-width: 992px) {
   html {
     font-size: 22px;
   }
@@ -80,24 +133,50 @@ body.appear {
   display: block;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 500;
   line-height: 1.25;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -112,21 +191,24 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
-  padding: .125em;
+code,
+samp {
+  padding: 0.125em;
 }
 
 pre {
   overflow: scroll;
 }
 
-
-a.button:hover, a.button:focus {
+a.button:hover,
+a.button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
@@ -153,39 +235,67 @@ a.button:hover, a.button:focus {
   border-radius: 30px;
 }
 
- button:hover, button:focus  {
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-
-
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+a.button.primary,
+button.primary {
+  background-color: var(--bg-button-color);
+  color: var(--c-white);
+  font-weight: normal;
+  border-radius: 0;
+  font-size: var(--body-font-size-s);
 }
 
+a.button.primary:hover,
+button.primary:hover {
+  background-color: var(--bg-button-color-hover);
+}
 
-main input, main select, main textarea {
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color);
+}
+
+main input,
+main select,
+main textarea,
+main .custom-dropdown__button {
   width: 100%;
-  display: block;
-  margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;
-  border-radius: 0.25rem;
+  display: flex;
+  padding: 10px;
+  border-radius: var(--form-border-radius);
   box-sizing: border-box;
-  border: 1px solid var(--text-color);
+  border: var(--field-border);
   color: var(--text-color);
   background-color: var(--background-color);
 }
 
-main input:hover {
-  border: 1px solid var(--text-color);
+main input:hover,
+main select:hover,
+main textarea:hover,
+main .custom-dropdown__button:hover {
+  outline: var(--form-hover-border);
+  outline-offset: -2px;
+}
+
+main input:focus-visible,
+main select:focus-visible,
+main textarea:focus-visible,
+main .custom-dropdown__button:focus-visible {
+  outline: var(--form-focus-border);
+  outline-offset: -2px;
 }
 
 main .section {
@@ -195,7 +305,7 @@ main .section {
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
-  border-radius: .25em;
+  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
@@ -208,12 +318,12 @@ main blockquote {
 }
 
 main blockquote p::before {
-  content: "“";
+  content: '“';
   line-height: 0;
 }
 
 main blockquote p::after {
-  content: "”";
+  content: '”';
   line-height: 0;
 }
 
@@ -230,13 +340,13 @@ main img {
   height: auto;
 }
 
-@media (width >= 600px) {
+@media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
   }
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -266,14 +376,14 @@ main .section.highlight {
   --heading-font-size-xxl: 55px;
 }
 
-.disclosure p, .disclosure li {
+.disclosure p,
+.disclosure li {
   font-size: var(--body-font-size-s);
 }
 
 .disclosure #ot-sdk-cookie-policy .ot-sdk-container {
   max-width: 1200px;
 }
-
 
 /* The injected widget should be customized in the SDK UI by an administrator.
  * see https://my.onetrust.com/articles/en_US/Knowledge/UUID-8a1fff4c-95c6-be5f-4369-228aa86283c6
@@ -289,8 +399,8 @@ main .section.highlight {
 
 .disclosure #ot-sdk-cookie-policy {
   /* reduce padding introduced by new section */
-   margin-top: -32px;
-   margin-bottom: -32px;
+  margin-top: -32px;
+  margin-bottom: -32px;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -316,7 +426,61 @@ main .section.highlight {
 }
 
 .disclosure .full-policy > .default-content-wrapper > p,
-.disclosure .full-policy > .default-content-wrapper > ul{
+.disclosure .full-policy > .default-content-wrapper > ul {
   margin-left: 5rem;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+div:where([role='dialog']) .section-with-background,
+main .section-with-background {
+  --text-color: var(--c-white);
+  --background-color: var(--c-white);
+
+  box-sizing: border-box;
+  position: relative;
+  min-height: 405px;
+  color: var(--text-color);
+  margin-top: 48px;
+  margin-bottom: 48px;
+  padding: 48px 32px;
+}
+
+div:where([role='dialog']) .section-with-background > div:first-of-type,
+main .section-with-background > div:first-of-type,
+div:where([role='dialog']) .section-with-background > div:first-of-type > :first-child,
+main .section-with-background > div:first-of-type > :first-child {
+  margin-top: 0;
+}
+
+div:where([role='dialog']) .section-with-background > div:last-of-type,
+main .section-with-background > div:last-of-type,
+div:where([role='dialog']) .section-with-background > div:last-of-type > :last-child,
+main .section-with-background > div:last-of-type > :last-child {
+  margin-bottom: 0;
+}
+
+div:where([role='dialog']) .section-with-background > picture:last-of-type img,
+main .section-with-background > picture:last-of-type img {
+  width: var(--wrapper-width);
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  object-fit: cover;
+}
